@@ -14,6 +14,9 @@ import org.springframework.web.server.ResponseStatusException;
 import javax.validation.Valid;
 import java.util.*;
 
+/**
+ * @author Ray
+ */
 @RestController
 public class AcctController {
 
@@ -64,7 +67,7 @@ public class AcctController {
         Set<String> hashSet = new HashSet<>();
 
         for (int i = 0; i < payments.size(); i++) {
-            if (type.equals("POST") && (!hashSet.add(payments.get(i).getEmployee() + payments.get(i).getPeriod()) ||
+            if ("POST".equals(type) && (!hashSet.add(payments.get(i).getEmployee() + payments.get(i).getPeriod()) ||
                     paymentService.findByEmployeeIgnoreCaseAndPeriod(payments.get(i).getEmployee(),
                             payments.get(i).getPeriod()) != null)) {
                 throw new ResponseStatusException(HttpStatus.BAD_REQUEST, String.format("payments[%d]: Payment exist!", i));

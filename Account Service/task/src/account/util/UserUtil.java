@@ -7,6 +7,9 @@ import java.util.Collections;
 import java.util.List;
 import java.util.Set;
 
+/**
+ * @author Ray
+ */
 public class UserUtil {
     public static List<String> getRoles(Set<Group> groups) {
         List<String> result = new ArrayList<>();

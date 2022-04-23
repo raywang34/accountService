@@ -6,6 +6,9 @@ import org.springframework.stereotype.Repository;
 
 import java.util.Optional;
 
+/**
+ * @author Ray
+ */
 @Repository
 public interface GroupRepository extends CrudRepository<Group, Long> {
     Optional<Group> findByCodeIgnoreCase(String code);

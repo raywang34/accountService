@@ -8,6 +8,9 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 
+/**
+ * @author Ray
+ */
 public class UserDetailsImpl implements UserDetails {
     private final String username;
     private final String password;

@@ -14,6 +14,9 @@ import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
+/**
+ * @author Ray
+ */
 public class CustomAuthenticationEntryPoint implements AuthenticationEntryPoint {
 
     private ObjectMapper objectMapper = new ObjectMapper();

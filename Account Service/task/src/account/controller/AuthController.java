@@ -20,6 +20,9 @@ import org.springframework.web.server.ResponseStatusException;
 import javax.validation.Valid;
 import java.util.*;
 
+/**
+ * @author Ray
+ */
 @RestController
 public class AuthController {
 

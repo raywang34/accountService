@@ -5,6 +5,9 @@ import account.repository.GroupRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+/**
+ * @author Ray
+ */
 @Service
 public class GroupService {
     private final GroupRepository groupRepository;
@@ -25,7 +28,7 @@ public class GroupService {
             groupRepository.save(new Group("ROLE_USER"));
             groupRepository.save(new Group("ROLE_ACCOUNTANT"));
             groupRepository.save(new Group("ROLE_AUDITOR"));
-        } catch (Exception e) {
+        } catch (Exception ex) {
 
         }
     }

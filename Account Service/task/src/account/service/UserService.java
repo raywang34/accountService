@@ -15,6 +15,9 @@ import javax.transaction.Transactional;
 import java.util.List;
 import java.util.Locale;
 
+/**
+ * @author Ray
+ */
 @Service
 @Transactional
 public class UserService implements UserDetailsService {
@@ -65,8 +68,20 @@ public class UserService implements UserDetailsService {
         return userRepository.save(toSave);
     }
 
-    public void delete(User toDelete) {
-        userRepository.delete(toDelete);
+    public boolean delete(User toDelete) {
+
+        boolean result = false;
+
+        if (userRepository.findById(toDelete.getId()).isPresent()) {
+            try {
+                userRepository.delete(toDelete);
+                result = true;
+            } catch (Exception ex) {
+
+            }
+        }
+
+        return result;
     }
 
     public long count() {

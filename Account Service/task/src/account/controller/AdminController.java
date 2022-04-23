@@ -17,6 +17,9 @@ import org.springframework.web.server.ResponseStatusException;
 
 import java.util.*;
 
+/**
+ * @author Ray
+ */
 @RestController
 public class AdminController {
 
@@ -51,7 +54,7 @@ public class AdminController {
                 existingGroups.add(group);
 
                 for (Group existingGroup : existingGroups) {
-                    if (existingGroups.size() > 1 && existingGroup.getCode().equals("ROLE_ADMINISTRATOR")) {
+                    if (existingGroups.size() > 1 && "ROLE_ADMINISTRATOR".equals(existingGroup.getCode())) {
                         throw new ResponseStatusException(HttpStatus.BAD_REQUEST,
                                 "The user cannot combine administrative and business roles!");
                     }
@@ -67,7 +70,7 @@ public class AdminController {
                         "/api/admin/user/role"));
                 break;
             case "REMOVE":
-                if (code.equals("ROLE_ADMINISTRATOR")) {
+                if ("ROLE_ADMINISTRATOR".equals(code)) {
                     throw new ResponseStatusException(HttpStatus.BAD_REQUEST,
                             "Can't remove ADMINISTRATOR role!");
                 }
@@ -141,7 +144,7 @@ public class AdminController {
         String username = user.getEmail();
         String operation = requestBody.get("operation");
 
-        if (operation.equals("LOCK")) {
+        if ("LOCK".equals(operation)) {
             if (user.getRoles().contains("ROLE_ADMINISTRATOR")) {
                 throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Can't lock the ADMINISTRATOR!");
             }
@@ -155,7 +158,7 @@ public class AdminController {
                     String.format("Lock user %s", username),
                     "api/admin/user/access"));
 
-        } else if (operation.equals("UNLOCK")) {
+        } else if ("UNLOCK".equals(operation)) {
             user.setFailedAttempt(0);
             user.setAccountNonLocked(true);
             userService.save(user);

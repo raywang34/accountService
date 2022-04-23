@@ -4,6 +4,9 @@ import javax.persistence.*;
 import javax.validation.constraints.NotEmpty;
 import java.util.Set;
 
+/**
+ * @author Ray
+ */
 @Entity
 @Table(name = "principle_groups")
 public class Group{

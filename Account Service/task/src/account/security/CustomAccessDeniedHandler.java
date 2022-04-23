@@ -18,6 +18,9 @@ import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
+/**
+ * @author Ray
+ */
 public class CustomAccessDeniedHandler implements AccessDeniedHandler {
 
     @Autowired

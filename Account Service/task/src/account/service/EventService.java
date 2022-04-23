@@ -6,6 +6,9 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+/**
+ * @author Ray
+ */
 @Service
 public class EventService {
     private final EventRepository eventRepository;

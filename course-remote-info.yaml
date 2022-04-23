@@ -3,7 +3,7 @@ hyperskill_project:
   ide_files: https://stepik.org/media/attachments/lesson/612593/additional_files.json
   is_template_based: false
   use_ide: true
-update_date: Tue, 05 Apr 2022 10:39:16 UTC
+update_date: Sat, 23 Apr 2022 14:35:16 UTC
 stages:
 - id: 1086
   step: 16601
@@ -40,7 +40,7 @@ topics:
     theory_id: 6569
   - title: Immutability
     theory_id: 7929
-  - title: Introduction to operating systems
+  - title: Introduction to Operating systems
     theory_id: 9704
   - title: Computer algorithms
     theory_id: 16547
@@ -52,7 +52,7 @@ topics:
     theory_id: 6434
   - title: HTTP URL
     theory_id: 6740
-  - title: Tags and attributes
+  - title: Tags and Attributes
     theory_id: 7536
   - title: HTML page structure
     theory_id: 6491
@@ -172,7 +172,7 @@ topics:
     theory_id: 13931
   - title: Command line overview
     theory_id: 8977
-  - title: Parameters and options
+  - title: Parameters and Options
     theory_id: 9746
   - title: Java Archive
     theory_id: 4311

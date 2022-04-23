@@ -1,5 +1,8 @@
 package account.model;
 
+/**
+ * @author Ray
+ */
 public class Role {
 
     private String user;
