@@ -65,7 +65,7 @@ public class AdminController {
                 eventService.save(new Event(
                         new Date(),
                         "GRANT_ROLE",
-                        details.getUsername(),
+                        details == null ? null : details.getUsername(),
                         String.format("Grant role %s to %s", role.getRole(), user.getEmail()),
                         "/api/admin/user/role"));
                 break;
@@ -92,7 +92,7 @@ public class AdminController {
                 eventService.save(new Event(
                         new Date(),
                         "REMOVE_ROLE",
-                        details.getUsername(),
+                        details == null ? null : details.getUsername(),
                         String.format("Remove role %s from %s", role.getRole(), user.getEmail()),
                         "/api/admin/user/role"));
                 break;
@@ -124,7 +124,7 @@ public class AdminController {
             eventService.save(new Event(
                     new Date(),
                     "DELETE_USER",
-                    details.getUsername(),
+                    details == null ? null : details.getUsername(),
                     user.getEmail(),
                     "/api/admin/user"));
         }
@@ -154,7 +154,7 @@ public class AdminController {
             eventService.save(new Event(
                     new Date(),
                     "LOCK_USER",
-                    details.getUsername(),
+                    details == null ? null : details.getUsername(),
                     String.format("Lock user %s", username),
                     "api/admin/user/access"));
 
@@ -165,7 +165,7 @@ public class AdminController {
             eventService.save(new Event(
                     new Date(),
                     "UNLOCK_USER",
-                    details.getUsername(),
+                    details == null ? null : details.getUsername(),
                     String.format("Unlock user %s", username),
                     "api/admin/user/access"));
         } else {

@@ -120,9 +120,9 @@ public class User {
     @JsonIgnore
     @ManyToMany(cascade = {CascadeType.PERSIST, CascadeType.MERGE})
     @JoinTable(name = "user_groups",
-            joinColumns =@JoinColumn(name = "user_id"),
+            joinColumns = @JoinColumn(name = "user_id"),
             inverseJoinColumns = @JoinColumn(name = "group_id"))
-    private Set<Group> userGroups= new HashSet<>();
+    private Set<Group> userGroups = new HashSet<>();
 
     public Set<Group> getUserGroups() {
         return userGroups;
@@ -130,5 +130,46 @@ public class User {
 
     public void setUserGroups(Set<Group> userGroups) {
         this.userGroups = userGroups;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (o == this) {
+            return true;
+        }
+
+        if (o == null) {
+            return false;
+        }
+
+        if (!(o instanceof User)) {
+            return false;
+        }
+
+        User user = (User) o;
+
+        return Long.compare(id, user.id) == 0 &&
+                name.equals(user.name) &&
+                lastname.equals(user.lastname) &&
+                email.equals(user.email) &&
+                password == null ? (user.password == null ? true : false) : password.equals(user.password) &&
+                accountNonLocked == user.accountNonLocked &&
+                failedAttempt == user.failedAttempt &&
+                roles.equals(user.roles);
+    }
+
+    @Override
+    public int hashCode() {
+        int hash = 7;
+        hash = 31 * hash + (int) id;
+        hash = 31 * hash + (name == null ? 0 : name.hashCode());
+        hash = 31 * hash + (lastname == null ? 0 : lastname.hashCode());
+        hash = 31 * hash + (email == null ? 0 : email.hashCode());
+        hash = 31 * hash + (password == null ? 0 : password.hashCode());
+        hash = 31 * hash + (accountNonLocked ? 1 : 0);
+        hash = 31 * hash + failedAttempt;
+        hash = 31 * hash + (roles == null ? 0 : roles.hashCode());
+
+        return hash;
     }
 }

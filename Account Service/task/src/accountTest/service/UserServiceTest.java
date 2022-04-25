@@ -36,7 +36,7 @@ public class UserServiceTest {
     }
 
     @Test
-    public void testFindByEmailIgnoreCase() {
+    public void findByEmailIgnoreCaseTest() {
 
         String email = "raywang@acme.com";
 
@@ -62,7 +62,7 @@ public class UserServiceTest {
     }
 
     @Test
-    public void testFindAll() {
+    public void findAllTest() {
 
         // [Arrange] 預期資料
         List<User> expectedUsers = new ArrayList<>();
@@ -102,7 +102,7 @@ public class UserServiceTest {
     }
 
     @Test
-    public void testSave() {
+    public void saveTest() {
 
         // [Arrange] 預期資料
         User expectedUser = new User();
@@ -126,7 +126,7 @@ public class UserServiceTest {
     }
 
     @Test
-    public void testDeleteSuccess() {
+    public void deleteSuccessTest() {
 
         // 準備刪除的資料
         User expectedUser = new User();
@@ -150,7 +150,7 @@ public class UserServiceTest {
     }
 
     @Test
-    public void testDeleteNotExist() {
+    public void deleteNotExistTest() {
 
         // 準備刪除的資料
         User expectedUser = new User();
@@ -174,7 +174,7 @@ public class UserServiceTest {
     }
 
     @Test
-    public void testDeleteException() {
+    public void deleteExceptionTest() {
 
         // 準備刪除的資料
         User expectedUser = new User();
